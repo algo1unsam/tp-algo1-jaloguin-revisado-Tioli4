@@ -1,0 +1,16 @@
+import chicos.*
+import elementos.*
+import adultos.*
+
+test "La capacidad de susto de pedro sin disfraces es 0" {
+	assert.equals(0,pedro.capacidadSusto())
+}
+
+test "Pedro deja de usar todos sus elementos" {
+	pedro.disfrazar(mascaraFrankenstein)
+	pedro.disfrazar(trajeDeBruja)
+	pedro.disfrazar(mascaraDracula)
+	pedro.tirarTodosLosDisfraces()
+	assert.that(pedro.disfraces().isEmpty())
+}
+
