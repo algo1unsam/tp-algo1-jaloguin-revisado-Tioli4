@@ -2,7 +2,7 @@ import elementos.*
 
 object macaria {
 	var nivelIra= 10
-	const disfraces = [ ]
+	const property disfraces = [ ]
 	var property caramelos = 0
 
 	method capacidadSusto(){
@@ -15,7 +15,8 @@ object macaria {
 		disfraces.add(disfraz)
 	}
 	method dejarDeUsarMenosEfectivo(){
-		
+		const efectividad = disfraces.sortedBy{a, b => a.nivelSusto()> b.nivelSusto()}
+		disfraces.remove(efectividad.last())
 	}
 	method enojar(){
 		nivelIra += 1
@@ -44,6 +45,22 @@ object pancracio {
 // El chico inventado .
 
 object pedro {
-	method capacidadSusto() = 2
+	var property caramelos = 0
+	const property disfraces = []
+	
+	method capacidadSusto(){
+		return disfraces.fold(0, {acum, disfraz => acum + disfraz.nivelSusto() } )
+	}
+	method disfrazar(disfraz){
+		disfraces.add(disfraz)
+	}
+	method tirarTodosLosDisfraces(){
+		disfraces.clear()
+	}
+	
+	method recibirCaramelos(n){
+		caramelos += n
+	}
+	
 }
 

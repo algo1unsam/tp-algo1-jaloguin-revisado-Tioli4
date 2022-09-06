@@ -3,18 +3,17 @@ import elementos.*
 import adultos.*
 
 object legionDelTerror {
-	const integrantes = [ ]
+	var integrantes = [ ]
 	
 	method capacidadSusto(){
 		return integrantes.fold(0, {acum, chique => acum + chique.capacidadSusto()})
 	}
-	method recibirCaramelos(){
-		const lider = integrantes.map({chique => chique.capacidadSusto()})
-		const liderIndex = lider.indexOf(lider.max())
-		integrantes.charAt(liderIndex).recibirCaramelos()
+	method recibirCaramelos(n){
+		const lider = integrantes.sortedBy{a, b => a.capacidadSusto()> b.capacidadSusto()}
+		lider.get(0).recibirCaramelos(n)
 	}
 	method agregarIntegrantes(chico){
-		integrantes.add(chico)
+		integrantes.addAll(chico)
 	}
 	method caramelos(){
 		return integrantes.fold(0,{acum, chique => acum + chique.caramelos()})

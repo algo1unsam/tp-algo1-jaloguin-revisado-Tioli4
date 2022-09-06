@@ -28,7 +28,7 @@ test "La cantidad de caramelos entregada se ve afectada por los elementos del ch
 test "Los caramelos efectivamente se entregan" {
 	macaria.disfrazar(mascaraFrankenstein)
 	mirca.serAsustadoPor(macaria)
-	assert.equals(7,macaria.caramelos())
+	assert.equals(8,macaria.caramelos())
 }
 
 test "Mirca es asustado por la legion del terror y da 21 caramelos" {
