@@ -24,7 +24,7 @@ object macaria {
 }
 
 object pancracio {
-	var asustar = "buuuu"
+	var asustar = 4
 	const property disfraces = [mascaraDracula]
 	var property caramelos = 0
 	
@@ -38,7 +38,7 @@ object pancracio {
 		caramelos += n
 	}
 	method quitarDisfraz(disfraz){
-		asustar = asustar + "uu"
+		asustar += 2
 	}
 }
 
